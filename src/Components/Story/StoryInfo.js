@@ -1,28 +1,15 @@
-import React from "react";
-import {
-  IconBy,
-  IconTime,
-  IconComment,
-} from '../../Assets/Icons';
+import React from 'react';
+import { StoryInfo } from './Styles';
+import InfoBy from './InfoBy';
+import InfoComment from './InfoComment';
+import InfoTime from './InfoTime';
 
-
-export const StoryInfo = ({by, time, comment}) => {
-  return(
+export const StoryInfoBlock = ({ id, by, time, kids }) => {
+  return (
     <StoryInfo>
-      <StoryInfoItem><StoryInfoBy /></StoryInfoItem>
+      <InfoBy by={by} />
+      <InfoTime timd={time} />
+      <InfoComment kids={kids} id={id} />
     </StoryInfo>
-  )
-}
-
-export const StoryInfoItem= ({by, time, comment}) => {
-return(<StoryInfoItem />)
-}
-
-export const StoryInfoItem= ({by, time, comment}) => {
-  return(<StoryInfoItem></StoryInfoItem>)
-}
-
-export const StoryInfoBy = ({by, time, comment}) => (<IconBy /> {by});
-export const StoryInfoTime = ({by, time, comment}) => (<IconTime /> {time});
-export const StoryInfoComment = ({by, time, comment}) => (<IconComment /> {descendants});
-
+  );
+};

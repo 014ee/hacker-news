@@ -7,7 +7,7 @@ import {
   HeaderOption,
   OptionButton,
 } from './Styles';
-import { Logo, IconUser } from '../../Assets/Icons';
+import { IconLogo, IconUser } from '../../Assets/Icons';
 import SearchBar from '../Search/SearchBar';
 
 const HeaderMain = function () {
@@ -16,7 +16,7 @@ const HeaderMain = function () {
       <Container>
         <HeaderTop>
           <HeaderLogo>
-            <Logo />
+            <IconLogo />
           </HeaderLogo>
           <HeaderOption>
             <OptionButton>

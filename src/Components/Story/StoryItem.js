@@ -1,17 +1,16 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState, useEffect } from 'react';
-import { IconBy, IconTime, IconComment, IconPointOn } from '../../Assets/Icons';
+import { IconPointOn } from '../../Assets/Icons';
+import { StoryInfoBlock } from './StoryInfo';
 import {
   StoryBlock,
   StoryTitle,
   StoryUrl,
-  StoryInfo,
-  StoryInfoItem,
   StoryPoint,
+  PointBar,
 } from './Styles';
-import { getStory } from '../../Hooks/useApiStory';
+import { getStory } from '../../Hooks/useApi';
 import Sitemap from '../../Utils/Sitemap';
-import { useDateFormat } from '../../Hooks/useDateFormat';
 
 function Story({ storyId, index }) {
   const [story, setStory] = useState([]);
@@ -33,25 +32,24 @@ function Story({ storyId, index }) {
         )}
       </StoryTitle>
 
-      <StoryInfo>
-        <StoryInfoItem>
-          <IconBy /> {story.by}
-        </StoryInfoItem>
-        <StoryInfoItem>
-          <IconTime /> {useDateFormat(story.time)} ago
-        </StoryInfoItem>
-        <StoryInfoItem>
-          <IconComment /> {story.descendants}
-        </StoryInfoItem>
-      </StoryInfo>
+      <StoryInfoBlock
+        id={story.id}
+        by={story.by}
+        time={story.time}
+        kids={story.kids}
+      />
 
       <StoryPoint>
         <IconPointOn />
         {story.score}
-        <progress max='300' value={story.score}></progress>
+        <PointBar max='300' value={story.score} />
       </StoryPoint>
     </StoryBlock>
   ) : null;
 }
+
+PointBar.defaultProps = {
+  value: 0,
+};
 
 export default Story;

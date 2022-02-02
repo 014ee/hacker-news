@@ -4,14 +4,14 @@ import { Container } from '../Container';
 import HeaderModal from '../Header/HeaderModal';
 import { ModalBlock, UserName, UserInfo } from './Styles';
 import { IconPoint } from '../../Assets/Icons';
-import { getUser } from '../../Hooks/useApi';
+import { getStory } from '../../Hooks/useApi';
 import { useDateFormat } from '../../Hooks/useDateFormat';
 
 const ModalUser = ({ open, onClose, title, id }) => {
-  const [user, setUser] = useState({});
+  const [story, setStory] = useState({});
 
   useEffect(() => {
-    getUser(id).then((data) => data && setUser(data));
+    getStory(id).then((data) => data && setStory(data));
   }, []);
 
   return createPortal(
@@ -19,20 +19,15 @@ const ModalUser = ({ open, onClose, title, id }) => {
       <HeaderModal title={title} onClose={onClose} />
       <Container>
         <UserName>
-          <span>user</span>
-          <h2>{id}</h2>
+          <span>comment</span>
+          <h2>{story.id}</h2>
         </UserName>
         <UserInfo>
-          <strong>{useDateFormat(user.created)} ago</strong>
+          <strong>{useDateFormat(story.id)} ago</strong>
           <strong>
-            <IconPoint /> {user.karma}
+            <IconPoint /> {story.id}
           </strong>
-          <ul>
-            <li articles={user.submitted}>articles</li>
-            <li articles={user.submitted}>comments</li>
-            <li articles={user.submitted}>favorite</li>
-          </ul>
-          <p>{user.about}</p>
+          <p>{story.id}</p>
         </UserInfo>
       </Container>
     </ModalBlock>,

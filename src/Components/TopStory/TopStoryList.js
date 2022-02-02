@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container } from '../Container';
 import { IconBadge, IconTime } from '../../Assets/Icons';
 import { SliderBlock, StoryListBlock, StoryDate } from './Styles';
-import { getStoryIds } from '../../Hooks/useApiStory';
+import { getStoryIds } from '../../Hooks/useApi';
 import StoryItem from './TopStoryItem';
 
 function StoryList({ type }) {

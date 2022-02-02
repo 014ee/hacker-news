@@ -12,7 +12,7 @@ import {
   StoryPoint,
   Button,
 } from './Styles';
-import { getStory } from '../../Hooks/useApiStory';
+import { getStory } from '../../Hooks/useApi';
 import { useDateFormat } from '../../Hooks/useDateFormat';
 
 function Story({ storyId, index }) {

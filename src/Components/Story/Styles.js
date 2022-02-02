@@ -4,6 +4,7 @@ export const StoryListBlock = styled.section`
   display: block;
   margin-top: 20px;
   padding-bottom: 140px;
+  min-height: 100vh;
 `;
 
 export const StorySubTitle = styled.h3`
@@ -62,3 +63,23 @@ export const StoryPoint = styled.div`
     height: 3px;
   }
 `;
+
+export const PointBar = styled.progress``;
+
+export const PageList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+`;
+export const PageItem = styled.li`
+  margin: 0 8px;
+`;
+export const PageNumber = styled.span`
+  display: inline-block;
+  padding: 0.5em;
+  cursor: pointer;
+`;
+
+export const StoryInfoBlock = styled.div``;
+export const Button = styled.button``;

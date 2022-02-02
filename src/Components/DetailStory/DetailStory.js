@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getStory } from '../../Hooks/useApiStory';
+import { getStory } from '../../Hooks/useApi';
 import { Container } from '../Container';
 import {
   DetailStoryBlock,
