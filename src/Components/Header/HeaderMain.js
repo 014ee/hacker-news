@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Container } from '../Container';
+import Sitemap from '../../Utils/Sitemap';
 import {
   HeaderBlock,
   HeaderTop,
@@ -16,7 +18,9 @@ const HeaderMain = function () {
       <Container>
         <HeaderTop>
           <HeaderLogo>
-            <IconLogo />
+            <Link to={Sitemap.home.path}>
+              <IconLogo />
+            </Link>
           </HeaderLogo>
           <HeaderOption>
             <OptionButton>

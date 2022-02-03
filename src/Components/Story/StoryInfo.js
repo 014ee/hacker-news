@@ -8,7 +8,7 @@ export const StoryInfoBlock = ({ id, by, time, kids }) => {
   return (
     <StoryInfo>
       <InfoBy by={by} />
-      <InfoTime timd={time} />
+      <InfoTime time={time} />
       <InfoComment kids={kids} id={id} />
     </StoryInfo>
   );

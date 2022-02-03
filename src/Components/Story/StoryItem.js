@@ -24,7 +24,7 @@ function Story({ storyId, index }) {
       <StoryUrl>{story.url}</StoryUrl>
       <StoryTitle>
         {story.url ? (
-          <a href={story.url} target='_blank'>
+          <a href={story.url} target='_blank' rel='noreferrer'>
             {story.title}
           </a>
         ) : (
