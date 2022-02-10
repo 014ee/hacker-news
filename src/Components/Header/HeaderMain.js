@@ -1,36 +1,40 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+
 import { Container } from '../Container';
-import Sitemap from '../../Utils/Sitemap';
-import {
-  HeaderBlock,
-  HeaderTop,
-  HeaderLogo,
-  HeaderOption,
-  OptionButton,
-} from './Styles';
-import { IconLogo, IconUser } from '../../Assets/Icons';
 import SearchBar from '../Search/SearchBar';
+import { IconLogo, IconUser } from '../../Assets/Icons';
+import { HeaderBlock, HeaderTop } from './Styles';
+import ModalUser from '../Modal/ModalUser';
 
 const HeaderMain = function () {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleModalOpen = () => setIsModalOpen(true);
+  const handleModalClose = () => setIsModalOpen(false);
+
   return (
-    <HeaderBlock>
-      <Container>
-        <HeaderTop>
-          <HeaderLogo>
-            <Link to={Sitemap.home.path}>
+    <>
+      <ModalUser
+        open={isModalOpen}
+        onClose={handleModalClose}
+        title='My Information'
+      />
+
+      <HeaderBlock>
+        <Container>
+          <HeaderTop>
+            <h1>
               <IconLogo />
-            </Link>
-          </HeaderLogo>
-          <HeaderOption>
-            <OptionButton>
-              <IconUser />
-            </OptionButton>
-          </HeaderOption>
-        </HeaderTop>
-        <SearchBar />
-      </Container>
-    </HeaderBlock>
+            </h1>
+            <span>
+              <button onClick={handleModalOpen}>
+                <IconUser />
+              </button>
+            </span>
+          </HeaderTop>
+          <SearchBar />
+        </Container>
+      </HeaderBlock>
+    </>
   );
 };
 

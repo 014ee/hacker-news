@@ -28,3 +28,28 @@ export const useDateFormat = (storyTime) => {
 
   return `${Math.floor(secondsAgo)} seconds`;
 };
+
+export const today = new Date().toLocaleDateString('kr-KO', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  weekday: 'short',
+});
+
+export const onedayago = new Date(
+  new Date() - 1000 * 60 * 60 * 24
+).toLocaleDateString('kr-KO', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  weekday: 'short',
+});
+
+export const twodaysago = new Date(
+  new Date() - 1000 * 60 * 60 * 24 * 2
+).toLocaleDateString('kr-KO', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  weekday: 'short',
+});

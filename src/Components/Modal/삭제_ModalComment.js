@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Container } from '../Container';
 import HeaderModal from '../Header/HeaderModal';
-import { ModalBlock, UserName, UserInfo } from './Styles';
+import { ModalBlock } from './Styles';
 import { getStory } from '../../Hooks/useApi';
 import { IconBy, IconTime, IconComment } from '../../Assets/Icons';
 
@@ -17,28 +17,28 @@ const ModalUser = ({ open, onClose, title, id }) => {
     <ModalBlock open={open} onClose={onClose}>
       <HeaderModal title={title} onClose={onClose} />
       <Container>
-        <UserName>
-          <span>comment</span>
-          <h2>{story.title}</h2>
-        </UserName>
-        <ul>
-          <li>
-            <IconBy />
-            {story.by}
-          </li>
-          <li>
-            <IconTime />
-            {story.time}
-          </li>
-          <li>
-            <IconComment />
-            {(story.comment = 0)}
-          </li>
-        </ul>
+        <section>
+          <h2>{story.title}ss</h2>
+          <p>댓글: {story.kids}</p>
+          <ul>
+            <li>
+              <IconBy />
+              {story.by}
+            </li>
+            <li>
+              <IconTime />
+              {story.time}
+            </li>
+            <li>
+              <IconComment />
+              {(story.comment = 0)}
+            </li>
+          </ul>
+        </section>
       </Container>
       <div>
         <section>
-          <Container>dd</Container>
+          <Container>댓글 영역 {story.kids}</Container>
         </section>
       </div>
     </ModalBlock>,

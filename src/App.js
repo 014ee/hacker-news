@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import styled from 'styled-components';
-import { themes } from './Styles/theme';
+import { themes } from './theme';
+
 import Sitemap from './Utils/Sitemap';
 import TabBar from './Components/TabBar/TabBar';
 import Home from './Pages/Home';
@@ -12,11 +13,6 @@ import Show from './Pages/Show';
 import Jobs from './Pages/Jobs';
 import Detail from './Pages/Detail';
 import NotFound from './Pages/NotFound';
-
-const AppTemplate = styled.div`
-  background: ${(props) => props.theme.bgColor};
-  color: ${(props) => props.theme.fontColor};
-`;
 
 function App() {
   return (
@@ -29,7 +25,7 @@ function App() {
           <Route path={Sitemap.show.path} element={<Show />} />
           <Route path={Sitemap.jobs.path} element={<Jobs />} />
           <Route path={Sitemap.detail.pathVariable} element={<Detail />} />
-          <Route element={<NotFound />} />
+          <Route path={'*'} element={<NotFound />} />
         </Routes>
         <TabBar />
       </AppTemplate>
@@ -38,3 +34,9 @@ function App() {
 }
 
 export default App;
+
+const AppTemplate = styled.div`
+  min-height: 100vh;
+  background: ${(props) => props.theme.bgColor};
+  color: ${(props) => props.theme.fontColor};
+`;

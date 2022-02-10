@@ -1,13 +1,12 @@
 import React from 'react';
-import { StoryInfoItem } from './Styles';
-import { IconTime } from '../../Assets/Icons';
 import { useDateFormat } from '../../Hooks/useDateFormat';
+import { IconTime } from '../../Assets/Icons';
 
 const InfoTime = ({ time }) => {
   return (
-    <StoryInfoItem>
+    <>
       <IconTime /> {useDateFormat(time)} ago
-    </StoryInfoItem>
+    </>
   );
 };
 

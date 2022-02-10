@@ -7,7 +7,8 @@ export const TabBarBlock = styled.nav`
   transform: translateX(-50%);
   width: 100vw;
   background: ${(props) => props.theme.navBgColor};
-  filter: drop-shadow(0px -4px 4px rgba(0, 0, 0, 0.25));
+  box-shadow: 1px -1px 4px rgba(0, 0, 0, 0.2);
+  z-index: 99;
 `;
 
 export const TabBarList = styled.ul`
@@ -31,8 +32,8 @@ export const TabBarItem = styled.li`
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: #363636;
-    box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
+    background: ${(props) => props.theme.navHomeBgColor};
+    box-shadow: 1px -2px 4px rgba(0, 0, 0, 0.2);
   }
 
   & > a {
@@ -42,7 +43,7 @@ export const TabBarItem = styled.li`
     align-items: center;
     height: 76px;
     > * {
-      opacity: 0.87;
+      opacity: ${(props) => props.theme.opacity};
     }
   }
 `;
@@ -57,6 +58,6 @@ export const Circle = styled.span`
   margin: 0 auto;
   text-align: center;
   border-radius: 50%;
-  background: #363636;
-  box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
+  background: ${(props) => props.theme.navHomeBgColor}
+  box-shadow: 1px -1px 4px rgba(0, 0, 0, 0.4);
 `;

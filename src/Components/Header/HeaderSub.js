@@ -1,40 +1,46 @@
 import React, { useState } from 'react';
+
 import { Container } from '../Container';
-import ModalSearch from '../Modal/ModalSearch';
-import {
-  HeaderBlock,
-  HeaderTop,
-  HeaderTitle,
-  HeaderOption,
-  OptionButton,
-} from './Styles';
 import { IconSearch, IconOption } from '../../Assets/Icons';
+import { HeaderBlock, HeaderTop } from './Styles';
+import ModalSearch from '../Modal/ModalSearch';
+import ModalAbout from '../Modal/ModalAbout';
 
 const HeaderSub = function ({ title }) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const handleModalOpen = () => setIsModalOpen(true);
-  const handleModalClose = () => setIsModalOpen(false);
+  const [isModalSearchOpen, setIsModalSearchOpen] = useState(false);
+  const handleModalSearchOpen = () => setIsModalSearchOpen(true);
+  const handleModalSearchClose = () => setIsModalSearchOpen(false);
+
+  const [isModalAboutOpen, setIsModalAboutOpen] = useState(false);
+  const handleModalAboutOpen = () => setIsModalAboutOpen(true);
+  const handleModalAboutClose = () => setIsModalAboutOpen(false);
 
   return (
     <>
       <ModalSearch
-        open={isModalOpen}
-        onClose={handleModalClose}
+        open={isModalSearchOpen}
+        onClose={handleModalSearchClose}
         title='Search'
+      />
+
+      <ModalAbout
+        open={isModalAboutOpen}
+        onClose={handleModalAboutClose}
+        title='About'
       />
 
       <HeaderBlock>
         <Container>
           <HeaderTop>
-            <HeaderTitle>{title}</HeaderTitle>
-            <HeaderOption>
-              <OptionButton onClick={handleModalOpen}>
+            <h2>{title}</h2>
+            <span>
+              <button onClick={handleModalSearchOpen}>
                 <IconSearch />
-              </OptionButton>
-              <OptionButton>
+              </button>
+              <button onClick={handleModalAboutOpen}>
                 <IconOption />
-              </OptionButton>
-            </HeaderOption>
+              </button>
+            </span>
           </HeaderTop>
         </Container>
       </HeaderBlock>

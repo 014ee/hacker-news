@@ -26,6 +26,7 @@ import { ReactComponent as IconPointSVG } from './icons/icon_point.svg';
 import { ReactComponent as IconPointOnSVG } from './icons/icon_point_on.svg';
 
 import { ReactComponent as IconBadgeSVG } from './icons/icon_badge.svg';
+import { ReactComponent as IconInfoSVG } from './icons/icon_info.svg';
 
 export const IconLogo = styled(LogoSVG)``;
 
@@ -53,3 +54,4 @@ export const IconPoint = styled(IconPointSVG)``;
 export const IconPointOn = styled(IconPointOnSVG)``;
 
 export const IconBadge = styled(IconBadgeSVG)``;
+export const IconInfo = styled(IconInfoSVG)``;

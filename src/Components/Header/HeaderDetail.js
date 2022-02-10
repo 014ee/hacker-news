@@ -1,39 +1,28 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Container } from '../Container';
-import {
-  HeaderBlock,
-  HeaderTop,
-  HeaderDetailTitle,
-  HeaderOption,
-  OptionButton,
-  GobackButton,
-} from './Styles';
-import { IconOption, IconGoBack } from '../../Assets/Icons';
 
-const HeaderSub = function ({ title }) {
+import { Container } from '../Container';
+import { IconGoBack } from '../../Assets/Icons';
+import { HeaderBlock, HeaderTop } from './Styles';
+
+const HeaderDetail = function ({ title }) {
   const navigate = useNavigate();
+  const goBack = () => navigate(-1);
+
   return (
     <HeaderBlock>
       <Container>
         <HeaderTop>
-          <GobackButton
-            onClick={() => {
-              navigate(-1);
-            }}
-          >
-            <IconGoBack />
-          </GobackButton>
-          <HeaderDetailTitle>{title}</HeaderDetailTitle>
-          <HeaderOption>
-            <OptionButton>
-              <IconOption />
-            </OptionButton>
-          </HeaderOption>
+          <span>
+            <button onClick={goBack}>
+              <IconGoBack />
+            </button>
+          </span>
+          <h2 className='center'>{title}</h2>
         </HeaderTop>
       </Container>
     </HeaderBlock>
   );
 };
 
-export default HeaderSub;
+export default HeaderDetail;

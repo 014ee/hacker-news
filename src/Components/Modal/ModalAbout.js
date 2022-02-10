@@ -3,28 +3,15 @@ import { createPortal } from 'react-dom';
 import styled from 'styled-components';
 
 import { Container } from '../Container';
-import SearchBar from '../Search/SearchBar';
 import HeaderModal from '../Header/HeaderModal';
 import { ModalBlock } from './Styles';
 import { IconInfo } from '../../Assets/Icons';
 
-const ModalSearch = ({ open, onClose, id }) => {
+const ModalAbout = ({ open, onClose, title }) => {
   return createPortal(
     <ModalBlock open={open} onClose={onClose}>
-      <HeaderModal onClose={onClose} />
+      <HeaderModal title={title} onClose={onClose} />
       <Container>
-        <SearchBar />
-        <SearchTag>
-          <ul>
-            <li>web</li>
-            <li>engine</li>
-            <li>backend</li>
-            <li>algorithms</li>
-            <li>HTML</li>
-            <li>JavaScript</li>
-            <li>CSS</li>
-          </ul>
-        </SearchTag>
         <SearchTip>
           <strong>
             <IconInfo /> TIP
@@ -41,22 +28,7 @@ const ModalSearch = ({ open, onClose, id }) => {
   );
 };
 
-export default ModalSearch;
-
-const SearchTag = styled.div`
-  ul {
-    display: flex;
-    margin: 20px 0;
-    li {
-      padding: 0.2em 1em;
-      border: 1px solid ${(props) => props.theme.fontColor};
-      border-radius: 30px;
-    }
-    li + li {
-      margin-left: 0.8em;
-    }
-  }
-`;
+export default ModalAbout;
 
 const SearchTip = styled.section`
   padding: 20px;

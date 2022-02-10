@@ -11,8 +11,8 @@ export const SearchInput = styled.input`
   padding-left: 3.2em;
   padding-bottom: 1em;
   padding-right: 1em;
-  background: #232429;
-  color: rgba(255, 255, 255, 0.87);
+  background: ${(props) => props.theme.subBgColor};
+  color: ${(props) => props.theme.fontColor};
 `;
 
 export const Area = styled.span`

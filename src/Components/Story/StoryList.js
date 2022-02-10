@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Container } from '../Container';
-import { StoryListBlock, StorySubTitle } from './Styles';
+
 import { getStoryIds } from '../../Hooks/useApi';
+import { Container } from '../Container';
 import StoryItem from './StoryItem';
 import Pagination from './Pagination';
+import { StoryListBlock, StorySubTitle } from './Styles';
 
 function StoryList({ type }) {
   const [storyIds, setStoryIds] = useState([]);
@@ -12,14 +13,14 @@ function StoryList({ type }) {
 
   useEffect(() => {
     getStoryIds(type).then((data) => data && setStoryIds(data));
-  }, []);
+  }, [type]);
 
-  // Get current posts
+  // Get Current Posts
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = storyIds.slice(indexOfFirstPost, indexOfLastPost);
 
-  // change page
+  // Change Page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
@@ -29,6 +30,7 @@ function StoryList({ type }) {
         {currentPosts.map((storyId, index) => (
           <StoryItem key={storyId} storyId={storyId} index={index} />
         ))}
+
         <Pagination
           postsPerPage={postsPerPage}
           totalPosts={storyIds.length}
