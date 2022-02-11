@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import styled from 'styled-components';
@@ -37,6 +37,7 @@ export default App;
 
 const AppTemplate = styled.div`
   min-height: 100vh;
+  padding-bottom: 140px;
   background: ${(props) => props.theme.bgColor};
   color: ${(props) => props.theme.fontColor};
 `;

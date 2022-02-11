@@ -12,7 +12,9 @@ export const getStoryIds = async (type) => {
 };
 
 export const getStory = async (storyId) => {
-  const response = await axios.get(`${storyUrl + storyId}.json`);
+  const response = await axios
+    .get(`${storyUrl + storyId}.json`)
+    .catch((err) => console.log('에러..'));
   return response.data ? ApiFields(response.data) : null;
 };
 

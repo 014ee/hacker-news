@@ -12,6 +12,9 @@ function TopStoryItem({ storyId, index }) {
 
   useEffect(() => {
     getStory(storyId).then((data) => data && setStory(data));
+    return () => {
+      setStory([]);
+    };
   }, [storyId]);
 
   return story ? (

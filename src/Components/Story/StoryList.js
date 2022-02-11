@@ -13,6 +13,7 @@ function StoryList({ type }) {
 
   useEffect(() => {
     getStoryIds(type).then((data) => data && setStoryIds(data));
+    return () => setStoryIds([]);
   }, [type]);
 
   // Get Current Posts
@@ -27,9 +28,14 @@ function StoryList({ type }) {
     <StoryListBlock>
       <Container>
         <StorySubTitle>Recent</StorySubTitle>
-        {currentPosts.map((storyId, index) => (
-          <StoryItem key={storyId} storyId={storyId} index={index} />
-        ))}
+        {currentPosts.length === postsPerPage &&
+          currentPosts.map((storyId) => (
+            <StoryItem
+              key={storyId}
+              storyId={storyId}
+              currentPosts={currentPosts}
+            />
+          ))}
 
         <Pagination
           postsPerPage={postsPerPage}

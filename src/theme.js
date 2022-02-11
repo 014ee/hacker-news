@@ -27,7 +27,7 @@ export const themes = {
     subBgColor: '#f7f7f7',
     fontColor: '#111',
     subFontColor: '#999',
-    modalBgColor: 'background: rgba(249, 249, 249, 0.9);',
+    modalBgColor: 'rgba(249, 249, 249, 0.9);',
     pointColor: '#03c1ff',
     subPointColor: '#96D9FF',
 

@@ -12,16 +12,24 @@ function DetailStory({ id }) {
 
   useEffect(() => {
     getStory(id)
-      .then((data) => data && setStory(data))
-      .then(() => setKidIds(story.kids));
-  });
+      .then((data) => {
+        data && setStory(data);
+        return data.kids;
+      })
+      .then((kids) => kids && setKidIds(story.kids));
+  }, [id, story.kids]);
 
   return (
     <DetailStoryBlock>
       <article>
         <Container>
           <h2>{story.title}</h2>
-          <StoryInfo id={story.id} by={story.by} time={story.time} />
+          <StoryInfo
+            id={story.id}
+            by={story.by}
+            time={story.time}
+            kids={story.kids}
+          />
           <p>{story.text}</p>
         </Container>
       </article>
@@ -39,7 +47,7 @@ function DetailStory({ id }) {
 export default DetailStory;
 
 const DetailStoryBlock = styled.div`
-  padding: 20px 0 100px;
+  padding: 20px 0;
   article {
     padding: 20px 0;
     h2 {

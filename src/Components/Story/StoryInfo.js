@@ -8,12 +8,8 @@ import InfoTime from './InfoTime';
 export const StoryInfo = ({ id, by, time, kids }) => {
   return (
     <StoryInfoBlock>
-      <li>
-        <InfoBy by={by} />
-      </li>
-      <li>
-        <InfoTime time={time} />
-      </li>
+      <li>{by && <InfoBy by={by} />}</li>
+      <li>{time && <InfoTime time={time} />}</li>
       {kids && (
         <li>
           <InfoComment kids={kids} id={id} />
@@ -21,6 +17,10 @@ export const StoryInfo = ({ id, by, time, kids }) => {
       )}
     </StoryInfoBlock>
   );
+};
+
+StoryInfo.defaultProps = {
+  kids: [],
 };
 
 const StoryInfoBlock = styled.ul`

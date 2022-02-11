@@ -48,9 +48,11 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
           <ArrowRight />
         </span>
 
-        {pageNumbers.map((number, index) => (
-          <SwiperSlide key={number} onClick={onActive}>
-            <PageNumber onClick={() => paginate(number)}>{number}</PageNumber>
+        {pageNumbers.map((pageNumber) => (
+          <SwiperSlide key={pageNumber} onClick={onActive}>
+            <PageNumber onClick={() => paginate(pageNumber)}>
+              {pageNumber}
+            </PageNumber>
           </SwiperSlide>
         ))}
       </Swiper>

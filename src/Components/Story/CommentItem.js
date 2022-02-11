@@ -12,16 +12,19 @@ const CommentItem = ({ kidId }) => {
 
   useEffect(() => {
     getStory(kidId)
-      .then((data) => setComment(data))
-      .then(() => setKidIds(comment.kids));
-  });
+      .then((data) => {
+        setComment(data);
+        return data.kids;
+      })
+      .then((kids) => kids && setKidIds(comment.kids));
+  }, [kidId]);
 
   return (
     <CommentItemBlock>
       <Container>
         <details open>
           <summary>
-            <strong>{comment.by} </strong>
+            <strong>{comment.by}</strong>
             <span>{useDateFormat(comment.time)}</span>
           </summary>
           <p>{comment.text}</p>

@@ -8,7 +8,8 @@ const CommentItemKids = ({ kidId }) => {
   const [comment, setComment] = useState([]);
   useEffect(() => {
     getStory(kidId).then((data) => setComment(data));
-  });
+  }, [kidId]);
+
   return (
     <CommentItemKidsBlock>
       <div>

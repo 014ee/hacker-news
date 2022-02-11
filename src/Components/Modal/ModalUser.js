@@ -14,7 +14,7 @@ const ModalUser = ({ open, onClose, id }) => {
 
   useEffect(() => {
     getUser(id).then((data) => data && setUser(data));
-  });
+  }, [id]);
 
   return createPortal(
     <ModalBlock open={open} onClose={onClose}>
@@ -68,17 +68,19 @@ const UserName = styled.div`
 const UserInfo = styled.div`
   & strong {
     display: flex;
-    align-items:center;
+    align-items: center;
     font-size: 16px;
-    line-height:2em;
+    line-height: 2em;
     color: ${(props) => props.theme.fontColor};
-    svg {margin-right: 8px;}
+    svg {
+      margin-right: 8px;
+    }
   }
   & ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top 60px;
+    margin-top: 60px;
     li {
       flex-grow: 1;
       margin-right: 20px;

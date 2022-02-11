@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
 import Sitemap from '../../Utils/Sitemap';
-import { TabBarBlock, TabBarList, TabBarItem } from './Styles';
+import { Container } from '../Container';
+import { TabBarBlock } from './Styles';
 import {
   IconHome,
   IconArticle,
@@ -13,38 +15,59 @@ import {
 const TabBar = function () {
   return (
     <TabBarBlock>
-      <TabBarList>
-        <TabBarItem>
-          <Link to={Sitemap.article.path}>
+      <Container>
+        <NavLink
+          className={(navData) => (navData.isActive ? 'active' : 'none')}
+          to={Sitemap.article.path}
+        >
+          <span>
             <IconArticle />
-            article
-          </Link>
-        </TabBarItem>
-        <TabBarItem>
-          <Link to={Sitemap.ask.path}>
+            <b>{Sitemap.article.name}</b>
+          </span>
+        </NavLink>
+
+        <NavLink
+          className={(navData) => (navData.isActive ? 'active' : 'none')}
+          to={Sitemap.ask.path}
+        >
+          <span>
             <IconAsk />
-            ask
-          </Link>
-        </TabBarItem>
-        <TabBarItem>
-          <Link className='circle' to={Sitemap.home.path}>
+            <b>{Sitemap.ask.name}</b>
+          </span>
+        </NavLink>
+
+        <NavLink
+          className={(navData) =>
+            navData.isActive ? 'active circle' : 'circle'
+          }
+          to={Sitemap.home.path}
+        >
+          <span>
             <IconHome />
-            home
-          </Link>
-        </TabBarItem>
-        <TabBarItem>
-          <Link to={Sitemap.show.path}>
+            <b>{Sitemap.home.name}</b>
+          </span>
+        </NavLink>
+
+        <NavLink
+          className={(navData) => (navData.isActive ? 'active' : 'none')}
+          to={Sitemap.show.path}
+        >
+          <span>
             <IconShow />
-            show
-          </Link>
-        </TabBarItem>
-        <TabBarItem>
-          <Link to={Sitemap.jobs.path}>
+            <b>{Sitemap.show.name}</b>
+          </span>
+        </NavLink>
+
+        <NavLink
+          className={(navData) => (navData.isActive ? 'active' : 'none')}
+          to={Sitemap.jobs.path}
+        >
+          <span>
             <IconJobs />
-            jobs
-          </Link>
-        </TabBarItem>
-      </TabBarList>
+            <b>{Sitemap.jobs.name}</b>
+          </span>
+        </NavLink>
+      </Container>
     </TabBarBlock>
   );
 };

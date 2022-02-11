@@ -11,7 +11,7 @@ function TopStoryList({ title, type }) {
 
   useEffect(() => {
     getStoryIds(type).then((data) => data && setStoryIds(data));
-  }, []);
+  }, [type]);
 
   return (
     <>
@@ -41,7 +41,7 @@ export default TopStoryList;
 const StoryDate = styled.header`
   padding: 12px 0 4px;
   background: #232429;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   text-align: center;
   letter-spacing: 0.1em;

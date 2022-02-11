@@ -8,27 +8,31 @@ import Sitemap from '../../Utils/Sitemap';
 import { IconPointOn } from '../../Assets/Icons';
 import { StoryInfo } from './StoryInfo';
 
-function StoryItem({ storyId }) {
+function StoryItem({ storyId, currentPosts }) {
   const [story, setStory] = useState([]);
   const [domain, setDomain] = useState('');
 
   useEffect(() => {
     getStory(storyId)
-      .then((data) => data && setStory(data))
-      .then(() => {
-        let storyUrl = story.url;
-
-        story.url &&
+      .then((data) => {
+        data && setStory(data);
+        return data.url;
+      })
+      .then((url) => {
+        url &&
           setDomain(
-            storyUrl.match(/(http(s)?:\/\/)([a-z0-9\w]+\.*)+[a-z0-9]{2,4}/gi)
+            url.match(/(http(s)?:\/\/)([a-z0-9\w]+\.*)+[a-z0-9]{2,4}/gi)
           );
       });
-  });
+    return () => {
+      setStory([]);
+      setDomain([]);
+    };
+  }, [currentPosts, storyId]);
 
-  // console.log(domain);
   return story ? (
     <StoryItemBlock>
-      <span className='url'>{domain}</span>
+      <span className='url'>{story.url && domain}</span>
 
       <h2 className='title'>
         {story.url ? (
@@ -43,7 +47,7 @@ function StoryItem({ storyId }) {
       <div className='pointbar'>
         <span>
           <IconPointOn />
-          {story.score}
+          {story.score && story.score}
         </span>
         <PointBar
           max='300'
