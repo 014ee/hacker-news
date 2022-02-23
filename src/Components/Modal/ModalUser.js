@@ -9,11 +9,18 @@ import HeaderModal from '../Header/HeaderModal';
 import { IconPoint } from '../../Assets/Icons';
 import { ModalBlock } from './Styles';
 
+const myPage = {
+  id: 'MY PAGE',
+  created: new Date() / 1000,
+  about: '',
+  karma: 0,
+  submitted: [],
+};
 const ModalUser = ({ open, onClose, id }) => {
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    getUser(id).then((data) => data && setUser(data));
+    getUser(id).then((data) => (data ? setUser(data) : setUser(myPage)));
   }, [id]);
 
   return createPortal(
@@ -22,7 +29,7 @@ const ModalUser = ({ open, onClose, id }) => {
       <Container>
         <UserName>
           <span>user</span>
-          <h2>{user.id}</h2>
+          <h2>{id}</h2>
         </UserName>
         <UserInfo>
           <strong>{useDateFormat(user.created)} ago</strong>
@@ -40,6 +47,10 @@ const ModalUser = ({ open, onClose, id }) => {
     </ModalBlock>,
     document.querySelector('#modal-root')
   );
+};
+
+ModalUser.defaultProps = {
+  id: 'MY PAGE',
 };
 
 export default ModalUser;

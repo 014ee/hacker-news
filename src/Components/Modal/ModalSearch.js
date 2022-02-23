@@ -46,14 +46,15 @@ export default ModalSearch;
 const SearchTag = styled.div`
   ul {
     display: flex;
+    flex-wrap: wrap;
     margin: 20px 0;
     li {
       padding: 0.2em 1em;
+      margin: 0.4em;
       border: 1px solid ${(props) => props.theme.fontColor};
       border-radius: 30px;
-    }
-    li + li {
-      margin-left: 0.8em;
+      font-size: 12px;
+      cursor: pointer;
     }
   }
 `;
@@ -65,7 +66,6 @@ const SearchTip = styled.section`
     display: flex;
     font-size: 18px;
     font-weight: 600;
-    text-indet: 2;
     color: ${(props) => props.theme.subPointColor};
     svg {
       margin-right: 8px;

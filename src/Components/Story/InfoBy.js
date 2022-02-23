@@ -10,7 +10,9 @@ const InfoBy = ({ by }) => {
 
   return (
     <>
-      <ModalUser open={isModalOpen} onClose={handleModalClose} id={by} />
+      {isModalOpen && (
+        <ModalUser open={isModalOpen} onClose={handleModalClose} id={by} />
+      )}
 
       <button onClick={handleModalOpen}>
         <IconBy /> {by}

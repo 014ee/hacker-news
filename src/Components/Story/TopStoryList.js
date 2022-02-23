@@ -41,15 +41,14 @@ export default TopStoryList;
 const StoryDate = styled.header`
   padding: 12px 0 4px;
   background: #232429;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 800;
   text-align: center;
-  letter-spacing: 0.1em;
 
   & > div {
     display: flex;
     margin-top: 8px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 400;
     letter-spacing: 0;
 

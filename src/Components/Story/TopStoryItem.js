@@ -96,14 +96,40 @@ const StoryIndex = styled.span`
   display: inline-block;
 `;
 
-const PointBar = styled.progress`
+const PointBar = styled.meter`
   flex-grow: 1;
   height: 3px;
-  color: orange;
-  & ::-webkit-progress-bar {
-    background: red;
+  border: 0;
+  background: ${(props) => props.theme.gray};
+  border-radius: 3px;
+
+  ::-webkit-meter-bar {
+    height: 3px;
+    border: 0;
+    background: ${(props) => props.theme.gray};
+    border-radius: 3px;
   }
-  &[value]::-webkit-progress-value {
-    background: orange;
+  ::-webkit-meter-suboptimum-value {
+    background: ${(props) => props.theme.pointColor};
+  }
+  ::-webkit-meter-optimum-value {
+    background: linear-gradient(
+      90deg,
+      #ff9696 0%,
+      #ff0303 66.28%,
+      #ff4949 129.85%
+    );
+  }
+
+  :-moz-meter-sub-optimum::-moz-meter-bar {
+    background: ${(props) => props.theme.pointColor};
+  }
+  :-moz-meter-optimum::-moz-meter-bar {
+    background: linear-gradient(
+      90deg,
+      #ff9696 0%,
+      #ff0303 66.28%,
+      #ff4949 129.85%
+    );
   }
 `;

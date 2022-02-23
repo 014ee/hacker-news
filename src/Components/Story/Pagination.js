@@ -81,7 +81,10 @@ const PageList = styled.div`
     color: ${(props) => props.theme.fontColor};
     opacity: ${(props) => props.theme.halfOpacity};
   }
-
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    display: none;
+  }
   .swiper-slide-active {
     button {
       color: ${(props) => props.theme.pointColor};

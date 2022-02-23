@@ -13,11 +13,13 @@ const HeaderMain = function () {
 
   return (
     <>
-      <ModalUser
-        open={isModalOpen}
-        onClose={handleModalClose}
-        title='My Information'
-      />
+      {isModalOpen && (
+        <ModalUser
+          open={isModalOpen}
+          onClose={handleModalClose}
+          title='My Information'
+        />
+      )}
 
       <HeaderBlock>
         <Container>

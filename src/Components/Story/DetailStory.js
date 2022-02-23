@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import styled from 'styled-components';
 
 import { getStory } from '../../Hooks/useApi';
@@ -69,5 +69,8 @@ const StoryComment = styled.div`
     &:last-child {
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
+  }
+  & > section::nth-child(even) {
+    background: ${(props) => props.theme.gray};
   }
 `;

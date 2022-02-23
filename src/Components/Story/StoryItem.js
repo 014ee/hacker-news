@@ -32,7 +32,7 @@ function StoryItem({ storyId, currentPosts }) {
 
   return story ? (
     <StoryItemBlock>
-      <span className='url'>{story.url && domain}</span>
+      {story.url && <span className='url'> {domain}</span>}
 
       <h2 className='title'>
         {story.url ? (
@@ -54,6 +54,7 @@ function StoryItem({ storyId, currentPosts }) {
           min='0'
           low='299'
           height='300'
+          optimum='300'
           value={story.score}
         />
       </div>
@@ -72,7 +73,7 @@ export default StoryItem;
 
 const StoryItemBlock = styled.article`
   display: block;
-  margin: 12px 0;
+  margin-top: 12px;
   padding: 12px 0;
 
   & span.url {
@@ -83,7 +84,7 @@ const StoryItemBlock = styled.article`
     margin-bottom: 4px;
     font-size: 12px;
     line-height: 1em;
-    font-weight:200;
+    font-weight: 200;
     white-space: nowrap;
   }
 
@@ -107,14 +108,42 @@ const StoryItemBlock = styled.article`
       }
     }
   }
-
-}
 `;
 
 const PointBar = styled.meter`
   flex-grow: 1;
   height: 3px;
-  & :: -webkit-meter-inner-element {
-    background: red;
+  border: 0;
+  background: ${(props) => props.theme.gray};
+  border-radius: 3px;
+
+  ::-webkit-meter-bar {
+    height: 3px;
+    border: 0;
+    background: ${(props) => props.theme.gray};
+    border-radius: 3px;
+  }
+  ::-webkit-meter-suboptimum-value {
+    background: ${(props) => props.theme.pointColor};
+  }
+  ::-webkit-meter-optimum-value {
+    background: linear-gradient(
+      90deg,
+      #ff9696 0%,
+      #ff0303 66.28%,
+      #ff4949 129.85%
+    );
+  }
+
+  :-moz-meter-sub-optimum::-moz-meter-bar {
+    background: ${(props) => props.theme.pointColor};
+  }
+  :-moz-meter-optimum::-moz-meter-bar {
+    background: linear-gradient(
+      90deg,
+      #ff9696 0%,
+      #ff0303 66.28%,
+      #ff4949 129.85%
+    );
   }
 `;
