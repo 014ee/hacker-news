@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const TabBarBlock = styled.nav`
   position: fixed;
@@ -7,6 +7,7 @@ export const TabBarBlock = styled.nav`
   margin: 0 auto;
   background: ${(props) => props.theme.navBgColor};
   box-shadow: 1px -1px 4px rgba(0, 0, 0, 0.2);
+
   z-index: 99;
 
   > div {
@@ -43,7 +44,7 @@ export const TabBarBlock = styled.nav`
         width: 80px;
         height: 80px;
         border-radius: 50%;
-        background: ${(props) => props.theme.navHomeBgColor};
+        background-color: ${(props) => props.theme.navHomeBgColor};
         box-shadow: 1px -2px 4px rgba(0, 0, 0, 0.2);
       }
     }
