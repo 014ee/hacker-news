@@ -10,7 +10,7 @@ const Modal = () => {
   const { isOpen, title, content } = useContext(ModalStateContext);
 
   return createPortal(
-    <ModalBlock open={isOpen}>
+    <ModalBlock open={isOpen} style={{ height: window.innerHeight }}>
       <HeaderModal title={title} />
       <Container>{content}</Container>
     </ModalBlock>,

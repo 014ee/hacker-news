@@ -76,6 +76,9 @@ const CommentItemBlock = styled.section`
     summary {
       padding: 20px 0;
       list-style: none;
+      ::-webkit-details-marker {
+        display: none;
+      }
       div {
         display: flex;
         justify-content: space-between;
