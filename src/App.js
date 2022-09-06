@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -12,15 +12,15 @@ import { themes } from "css/theme";
 
 // 라우트
 import sitemap from "settings/sitemap";
-import Ask from "pages/Ask";
-import Home from "pages/Home";
-import Article from "pages/Article";
-import Show from "pages/Show";
-import Jobs from "pages/Jobs";
-import Detail from "pages/Detail";
-import NotFound from "pages/NotFound";
 import TabBar from "components/TabBar";
-import { NetworkError } from "components/State";
+import { NetworkError, Loading } from "components/State";
+const Show = lazy(() => import("pages/Show"));
+const Jobs = lazy(() => import("pages/Jobs"));
+const Detail = lazy(() => import("pages/Detail"));
+const NotFound = lazy(() => import("pages/NotFound"));
+const Article = lazy(() => import("pages/Article"));
+const Home = lazy(() => import("pages/Home"));
+const Ask = lazy(() => import("pages/Ask"));
 
 function App() {
   const queryClient = new QueryClient();
@@ -28,32 +28,40 @@ function App() {
     console.log(performance.now);
   }, []);
   return (
-    <ErrorBoundary FallbackComponent={<NetworkError />}>
+    <ErrorBoundary FallbackComponent={NetworkError}>
       <ThemeProvider theme={themes.dark}>
         <QueryClientProvider client={queryClient}>
           <ModalContextProvider>
             <ActivePageContextProvider>
               <AppBlock>
-                <Routes>
-                  <Route path={sitemap.home.path} element={<Home />} />
-                  <Route
-                    path={sitemap.article.pathVariable}
-                    element={<Article />}
-                  />
-                  <Route path={sitemap.ask.pathVariable} element={<Ask />} />
-                  <Route path={sitemap.show.pathVariable} element={<Show />} />
-                  <Route path={sitemap.jobs.pathVariable} element={<Jobs />} />
-                  <Route
-                    path={sitemap.detail.pathVariable}
-                    element={<Detail />}
-                  />
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
+                <Suspense fallback={<Loading />}>
+                  <Routes>
+                    <Route path={sitemap.home.path} element={<Home />} />
+                    <Route
+                      path={sitemap.article.pathVariable}
+                      element={<Article />}
+                    />
+                    <Route path={sitemap.ask.pathVariable} element={<Ask />} />
+                    <Route
+                      path={sitemap.show.pathVariable}
+                      element={<Show />}
+                    />
+                    <Route
+                      path={sitemap.jobs.pathVariable}
+                      element={<Jobs />}
+                    />
+                    <Route
+                      path={sitemap.detail.pathVariable}
+                      element={<Detail />}
+                    />
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </Suspense>
                 <TabBar />
               </AppBlock>
             </ActivePageContextProvider>
           </ModalContextProvider>
-          <ReactQueryDevtools initialIsOpen={true} />
+          <ReactQueryDevtools initialIsOpen={false} />
         </QueryClientProvider>
       </ThemeProvider>
     </ErrorBoundary>

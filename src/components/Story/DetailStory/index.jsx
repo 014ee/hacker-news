@@ -7,9 +7,9 @@ import { getStory } from "utils/getApi";
 import { Container } from "components/Ui";
 import { Loading, NetworkError } from "components/State";
 import InfoSet from "../InfoSet";
-import CommentItem from "../CommentItem";
 import { NotFoundError } from "components/State";
 import queryOptions from "settings/queryOptions";
+import LazyCommentItem from "components/Story/CommentItem.Lazy";
 
 function DetailStory() {
   const params = useParams();
@@ -47,7 +47,7 @@ function DetailStory() {
       </Article>
       <StoryComment>
         {data.kids &&
-          data.kids.map((id, index) => <CommentItem key={index} id={id} />)}
+          data.kids.map((id, index) => <LazyCommentItem key={index} id={id} />)}
       </StoryComment>
     </DetailStoryBlock>
   );
