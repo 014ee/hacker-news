@@ -2,10 +2,12 @@ import { MdOutlineNightlight, MdOutlineLightMode } from "react-icons/md";
 import styled from "styled-components";
 
 const ThemeButton = ({ theme, setTheme }) => {
-  return (
-    <ThemeButtonBlock
-      onClick={() => (theme === "dark" ? setTheme("light") : setTheme("dark"))}
-    >
+  return theme === "dark" ? (
+    <ThemeButtonBlock onClick={() => setTheme("light")}>
+      <MdOutlineLightMode />
+    </ThemeButtonBlock>
+  ) : (
+    <ThemeButtonBlock onClick={() => setTheme("dark")}>
       <MdOutlineNightlight />
     </ThemeButtonBlock>
   );
