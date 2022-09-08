@@ -8,7 +8,6 @@ const LazyComponent = ({ children }) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         setIsInView(true);
-        console.log(entry.target);
         observer.unobserve(entry.target);
       }
     });
