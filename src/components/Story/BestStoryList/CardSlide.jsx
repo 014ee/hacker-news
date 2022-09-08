@@ -94,6 +94,7 @@ const Content = styled.div`
   }
   h2 {
     font-size: 24px;
+    line-height: 1.4em;
     font-weight: 800;
     color: ${(props) => props.theme.fontColor};
   }
