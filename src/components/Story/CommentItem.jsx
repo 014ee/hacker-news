@@ -9,12 +9,12 @@ import { Container } from "components/Ui";
 import CommentItemSkeleton from "./CommentItem.Skeleton";
 import queryOptions from "settings/queryOptions";
 
-const CommentItem = ({ id, type = "parent" }) => {
-  const { isLoading, isError, data } = useQuery(
-    [id],
-    () => getStory(id),
-    queryOptions
-  );
+const CommentItem = ({ id, type = "parent", isInView }) => {
+  const { isLoading, isError, data } = useQuery([id], () => getStory(id), {
+    ...queryOptions,
+    enabled: isInView,
+  });
+
   const [isShowReply, setShowReply] = useState(false);
 
   if (isLoading) {
@@ -24,6 +24,8 @@ const CommentItem = ({ id, type = "parent" }) => {
   if (isError) {
     return null;
   }
+
+  if (!data.title && !data.text) return null;
 
   return (
     <CommentItemBlock className={type === "kid" && "kid"}>
@@ -44,7 +46,7 @@ const CommentItem = ({ id, type = "parent" }) => {
               className="indent"
               onClick={() => setShowReply(!isShowReply)}
             >
-              reply ({data.kids.length}){" "}
+              reply ({data.kids.length})
               {isShowReply ? <MdArrowDropUp /> : <MdArrowDropDown />}
             </button>
           )}

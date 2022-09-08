@@ -9,7 +9,8 @@ import { Loading, NetworkError } from "components/State";
 import InfoSet from "../InfoSet";
 import { NotFoundError } from "components/State";
 import queryOptions from "settings/queryOptions";
-import LazyCommentItem from "components/Story/CommentItem.Lazy";
+import LazyComponent from "components/Ui/LazyComponent";
+import CommentItem from "../CommentItem";
 
 function DetailStory() {
   const params = useParams();
@@ -47,7 +48,11 @@ function DetailStory() {
       </Article>
       <StoryComment>
         {data.kids &&
-          data.kids.map((id, index) => <LazyCommentItem key={index} id={id} />)}
+          data.kids.map((id, index) => (
+            <LazyComponent key={index}>
+              <CommentItem id={id} />
+            </LazyComponent>
+          ))}
       </StoryComment>
     </DetailStoryBlock>
   );
@@ -55,7 +60,7 @@ function DetailStory() {
 
 export default React.memo(DetailStory);
 
-const DetailStoryBlock = styled.div`
+const DetailStoryBlock = styled.main`
   padding: 20px 0;
   article {
     padding: 20px 0;
