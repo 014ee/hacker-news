@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Hacker News
+Y Combinator에서 운영하고 있는 소셜 뉴스 웹사이트 [해커뉴스](https://news.ycombinator.com/ask)의 글을 읽기전용 모바일 반응형 웹으로 리뉴얼한 사이트입니다.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[DEMO](https://hacker-news-014ee.vercel.app/)
 
-## Available Scripts
+![해커뉴스_시안](https://user-images.githubusercontent.com/54103723/190094368-4ae9a612-bfa2-4da3-a03a-e726a36935d9.jpg)
+![해커뉴스_시안](https://user-images.githubusercontent.com/54103723/190094396-a2786da4-c0fc-4198-a447-0d0bff1a2f53.jpg)
 
-In the project directory, you can run:
+# API
+https://github.com/HackerNews/API
 
-### `npm start`
+# 기술 스택
+- React
+- React Router Dom
+- Styled Component
+- React JS Pagination
+- React-query
+- React-icons
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# 프로젝트 구조
+📦src  
+ ┣ 📂assets  
+ ┃ ┣ 📂icons  
+ ┣ 📂components  
+ ┃ ┣ 📂Header  
+ ┃ ┣ 📂Modal  
+ ┃ ┣ 📂SearchBar  
+ ┃ ┣ 📂State   
+ ┃ ┣ 📂Story   
+ ┃ ┣ 📂TabBar  
+ ┃ ┗ 📂Ui   
+ ┣ 📂context  
+ ┣ 📂css   
+ ┣ 📂pages  
+ ┃ ┣ 📜Article.jsx  
+ ┃ ┣ 📜Ask.jsx   
+ ┃ ┣ 📜Detail.jsx  
+ ┃ ┣ 📜Home.jsx  
+ ┃ ┣ 📜Jobs.jsx  
+ ┃ ┣ 📜NotFound.jsx  
+ ┃ ┗ 📜Show.jsx  
+ ┣ 📂settings    
+ ┣ 📂utils  
+ ┣ 📜App.js  
+ ┗ 📜index.js  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# 구현한 기능
+- Top, New, Show, Ask, Jobs 총 5가지 주제 별 페이지 처리
+- 각 페이지에 알맞는 데이터로 글 목록 조회
+- 글 제목 클릭시 내용과 댓글을 볼 수 있는 세부 페이지로 이동
+- useParams를 이용한 게시글 페이지네이션 처리
+- localStorage를 이용해 각 페이지의 페이지네이션 번호 저장
+- 유저 이름 클릭시 해당 유저의 정보를 보여주는 모달 오픈
+- 전역상태 관리를 이용한 다크/라이트 테마
+- 로딩되는 동안 스켈레톤 또는 로딩 스피너 노출
+- 에러 또는 잘못된 페이지 접근시 각 적절한 안내 페이지 제공
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# 수정 및 보완할 점
+- 메인 페이지 로딩 시간 단축
