@@ -5,7 +5,7 @@ Y Combinator에서 운영하고 있는 소셜 뉴스 웹사이트 [해커뉴스]
 [DEMO](https://hacker-news-014ee.vercel.app/)
 
 ![해커뉴스_시안](https://user-images.githubusercontent.com/54103723/190094368-4ae9a612-bfa2-4da3-a03a-e726a36935d9.jpg)
-![해커뉴스_시안](https://user-images.githubusercontent.com/54103723/190094396-a2786da4-c0fc-4198-a447-0d0bff1a2f53.jpg)
+![해커뉴스_시안](https://user-images.githubusercontent.com/54103723/190128069-23b99ef4-a906-499a-9a85-81cc0f4cd498.jpg)
 
 ## API
 
