@@ -52,7 +52,7 @@ const storyFields = ({
   text,
   score,
   descendants,
-  kids,
+  comments: kids,
 });
 
 const userFields = ({ id, created, karma, about, submitted }) => ({

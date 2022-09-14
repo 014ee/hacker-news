@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { MdAutorenew } from "react-icons/md";
 import styled from "styled-components";
 
-import error from "assets/error.png";
-import { ActivePageHandlerContext } from "context/ActivePageContext";
+import error from "assets/images/error.png";
+import { ActivePageHandlerContext } from "context/ActivePageContextProvider";
 import getPagenameFromParams from "utils/getPagenameFromParams";
 
 const NotFoundError = ({ redirection }) => {

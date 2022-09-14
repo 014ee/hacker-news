@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 
-import { ModalDispatchContext } from "context/ModalContext";
+import { ModalDispatchContext } from "context/ModalContextProvider";
 import ModalUser from "components/Modal/User";
-import { IconBy } from "assets/Icons";
+import { IconBy } from "assets/icons";
 
 const InfoBy = ({ by = "user name" }) => {
   const { openModal } = useContext(ModalDispatchContext);

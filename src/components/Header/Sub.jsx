@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 
-import { ModalDispatchContext } from "context/ModalContext";
+import { ModalDispatchContext } from "context/ModalContextProvider";
 import { ModalAbout, ModalSearch } from "components/Modal";
 import Header from "./Wrapper";
-import { IconSearch, IconOption } from "assets/Icons";
+import { IconSearch, IconOption } from "assets/icons";
 import { HeaderTop } from "./styles";
 
 const HeaderSub = function ({ title }) {

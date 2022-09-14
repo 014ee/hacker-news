@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import sitemap from "settings/sitemap";
 import { getStory } from "utils/getApi";
-import { IconPointOn } from "assets/Icons";
+import { IconPointOn } from "assets/icons";
 import InfoSet from "../InfoSet";
 import StoryItemSkeleton from "./StoryItem.Skeleton";
 import { POINTBAR_MAX_NUM } from "settings/story";
@@ -61,7 +61,7 @@ function StoryItem({ storyId }) {
           id={data.id}
           by={data.by}
           created={data.created}
-          kids={data.kids}
+          comments={data.comments}
         />
       </StoryItemBlock>
     )

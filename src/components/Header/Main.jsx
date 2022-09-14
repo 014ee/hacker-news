@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 
-import { ModalDispatchContext } from "context/ModalContext";
+import { ModalDispatchContext } from "context/ModalContextProvider";
 import { ModalUser } from "components/Modal";
 import SearchBar from "components/SearchBar/index.jsx";
-import { IconLogo, IconUser } from "assets/Icons";
+import { IconLogo, IconUser } from "assets/icons";
 import Header from "./Wrapper";
 import { HeaderTop } from "./styles";
 

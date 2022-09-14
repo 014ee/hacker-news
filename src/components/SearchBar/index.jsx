@@ -1,6 +1,6 @@
 import React from "react";
 
-import { IconSearch } from "assets/Icons";
+import { IconSearch } from "assets/icons";
 import { SearchBlock, SearchInput, Area } from "./styles";
 
 const SearchBar = function ({ tag, onChange }) {

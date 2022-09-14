@@ -3,7 +3,7 @@ import Pagination from "react-js-pagination";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-import { ActivePageHandlerContext } from "context/ActivePageContext";
+import { ActivePageHandlerContext } from "context/ActivePageContextProvider";
 import getPagenameFromParams from "utils/getPagenameFromParams";
 
 const CustomPagination = ({

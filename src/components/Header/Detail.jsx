@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import Header from "./Wrapper";
-import { IconGoBack } from "assets/Icons";
+import { IconGoBack } from "assets/icons";
 import { HeaderTop } from "./styles";
 
 const HeaderDetail = function ({ title }) {

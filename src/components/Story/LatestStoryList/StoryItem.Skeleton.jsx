@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { IconPointOn } from "assets/Icons";
+import { IconPointOn } from "assets/icons";
 import InfoSet from "../InfoSet";
 
 function StoryItemSkeleton() {

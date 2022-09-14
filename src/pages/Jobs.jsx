@@ -7,7 +7,7 @@ import { LatestStoryList } from "components/Story";
 import {
   ActivePageHandlerContext,
   JobsPageContext,
-} from "context/ActivePageContext";
+} from "context/ActivePageContextProvider";
 
 const Jobs = function () {
   const activePage = useContext(JobsPageContext);

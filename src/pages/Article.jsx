@@ -7,7 +7,7 @@ import sitemap from "settings/sitemap";
 import {
   ActivePageHandlerContext,
   ArticlePageContext,
-} from "context/ActivePageContext";
+} from "context/ActivePageContextProvider";
 
 const Article = function () {
   const activePage = useContext(ArticlePageContext);

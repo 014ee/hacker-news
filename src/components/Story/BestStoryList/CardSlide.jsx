@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import styled from "styled-components";
 
 import Card from "components/Ui/Card";
-import { IconPointOn } from "assets/Icons";
+import { IconPointOn } from "assets/icons";
 import InfoSet from "../InfoSet";
 import { getOnlyDomainName } from "utils/regExp";
 
@@ -56,7 +56,7 @@ const CardSlide = ({ data, dateList, setActivedDate }) => {
                     id={data.id}
                     by={data.by}
                     created={data.created}
-                    kids={data.kids}
+                    comments={data.comments}
                   />
                   <div className="pointbar">
                     <IconPointOn />

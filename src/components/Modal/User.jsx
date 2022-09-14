@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import { getUser } from "utils/getApi";
 import formatCreated from "utils/formatCreated";
-import { IconPoint } from "assets/Icons";
+import { IconPoint } from "assets/icons";
 
 import { Loading, NetworkError } from "components/State";
 

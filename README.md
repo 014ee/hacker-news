@@ -1,4 +1,5 @@
 # Hacker News
+
 Y Combinator에서 운영하고 있는 소셜 뉴스 웹사이트 [해커뉴스](https://news.ycombinator.com/ask)의 글을 읽기전용 모바일 반응형 웹으로 리뉴얼한 사이트입니다.
 
 [DEMO](https://hacker-news-014ee.vercel.app/)
@@ -7,9 +8,11 @@ Y Combinator에서 운영하고 있는 소셜 뉴스 웹사이트 [해커뉴스]
 ![해커뉴스_시안](https://user-images.githubusercontent.com/54103723/190094396-a2786da4-c0fc-4198-a447-0d0bff1a2f53.jpg)
 
 ## API
+
 https://github.com/HackerNews/API
 
 ## 기술 스택
+
 - create-react-app
 - react-router-dom
 - styled-components
@@ -19,33 +22,36 @@ https://github.com/HackerNews/API
 - react-icons
 
 ## 프로젝트 구조
+
 📦src  
  ┣ 📂assets  
  ┃ ┣ 📂icons  
+ ┃ ┣ 📂images  
  ┣ 📂components  
  ┃ ┣ 📂Header  
  ┃ ┣ 📂Modal  
  ┃ ┣ 📂SearchBar  
- ┃ ┣ 📂State   
- ┃ ┣ 📂Story   
+ ┃ ┣ 📂State  
+ ┃ ┣ 📂Story  
  ┃ ┣ 📂TabBar  
- ┃ ┗ 📂Ui   
+ ┃ ┗ 📂Ui  
  ┣ 📂context  
- ┣ 📂css   
+ ┣ 📂css  
  ┣ 📂pages  
  ┃ ┣ 📜Article.jsx  
- ┃ ┣ 📜Ask.jsx   
+ ┃ ┣ 📜Ask.jsx  
  ┃ ┣ 📜Detail.jsx  
  ┃ ┣ 📜Home.jsx  
  ┃ ┣ 📜Jobs.jsx  
  ┃ ┣ 📜NotFound.jsx  
  ┃ ┗ 📜Show.jsx  
- ┣ 📂settings    
+ ┣ 📂settings  
  ┣ 📂utils  
  ┣ 📜App.js  
- ┗ 📜index.js  
+ ┗ 📜index.js
 
 ## 구현한 기능
+
 - Top, New, Show, Ask, Jobs 총 5가지 주제 별 페이지 처리
 - 각 페이지에 알맞는 데이터로 글 목록 조회
 - 글 제목 클릭시 내용과 댓글을 볼 수 있는 세부 페이지로 이동
@@ -57,4 +63,5 @@ https://github.com/HackerNews/API
 - 에러 또는 잘못된 페이지 접근시 각 적절한 안내 페이지 제공
 
 ## 수정 및 보완할 점
+
 - 메인 페이지 로딩 시간 단축

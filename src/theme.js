@@ -1,5 +1,4 @@
 export const dark = {
-  mode: "dark",
   bgColor: "#121212",
   fontColor: "#fbfbfb",
   pointColor: "#03c1ff",
@@ -21,16 +20,15 @@ export const dark = {
 
   thirdOpacity: "0.3",
   halfOpacity: "0.5",
-  opacity: "0.8",
+  opacity: "0.7",
 };
 
 export const light = {
-  mode: "light",
   bgColor: "#f1f1f1",
   fontColor: "#111",
   pointColor: "#03c1ff",
   subBgColor: "#ddd",
-  subFontColor: "#999",
+  subFontColor: "#777",
   subPointColor: "#03cdff",
 
   white: "#fff",
@@ -47,5 +45,5 @@ export const light = {
 
   thirdOpacity: "0.3",
   halfOpacity: "0.5",
-  opacity: "0.8",
+  opacity: "0.7",
 };

@@ -41,14 +41,14 @@ function DetailStory() {
             id={data.id}
             by={data.by}
             created={data.created}
-            kids={data.kids}
+            comments={data.comments}
           />
           {data.text && <p dangerouslySetInnerHTML={{ __html: data.text }}></p>}
         </Container>
       </Article>
       <StoryComment>
-        {data.kids &&
-          data.kids.map((id, index) => (
+        {data.comments &&
+          data.comments.map((id, index) => (
             <LazyComponent key={index}>
               <CommentItem id={id} />
             </LazyComponent>

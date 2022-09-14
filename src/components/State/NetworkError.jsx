@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { MdAutorenew } from "react-icons/md";
 
-import error from "assets/error.png";
+import error from "assets/images/error.png";
 
 const NetworkError = () => {
   return (

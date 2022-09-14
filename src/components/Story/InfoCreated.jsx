@@ -1,7 +1,7 @@
 import React from "react";
 
 import formatCreated from "utils/formatCreated";
-import { IconCreated } from "assets/Icons";
+import { IconCreated } from "assets/icons";
 
 const InfoCreated = ({ created = new Date() }) => {
   return (

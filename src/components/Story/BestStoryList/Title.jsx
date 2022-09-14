@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { Container } from "components/Ui";
-import { IconBadge, IconCreated } from "assets/Icons";
+import { IconBadge, IconCreated } from "assets/icons";
 
 const Title = ({ title }) => {
   return (

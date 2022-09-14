@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 import InfoBy from "./InfoBy";
-import InfoComment from "./InfoReply";
+import InfoComment from "./InfoComment";
 import InfoCreated from "./InfoCreated";
 
-const InfoSet = ({ id, by, created, kids }) => {
+const InfoSet = ({ id, by, created, comments }) => {
   return (
     <InfoSetBlock>
       <li>
@@ -15,14 +15,14 @@ const InfoSet = ({ id, by, created, kids }) => {
         <InfoCreated created={created} />
       </li>
       <li>
-        <InfoComment kids={kids} id={id} />
+        <InfoComment comments={comments} id={id} />
       </li>
     </InfoSetBlock>
   );
 };
 
 InfoSet.defaultProps = {
-  kids: [],
+  comments: [],
 };
 
 export default InfoSet;
@@ -33,7 +33,8 @@ const InfoSetBlock = styled.ul`
   align-items: center;
   margin-top: 8px;
   opacity: ${(props) => props.theme.halfOpacity};
-  & li {
+
+  li {
     font-size: 12px;
     line-height: 1em;
     & > * {

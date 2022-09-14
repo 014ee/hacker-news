@@ -11,7 +11,6 @@ const formatCreated = (ms) => {
   if (daysAgo >= 1) return `${daysAgo} days`;
   if (hoursAgo >= 1) return `${hoursAgo} hours`;
   if (minutesAgo >= 1) return `${minutesAgo} minutes`;
-
   return `${Math.floor(secondsAgo)} seconds`;
 };
 

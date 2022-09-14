@@ -41,18 +41,18 @@ const CommentItem = ({ id, type = "parent", isInView }) => {
             className="text indent"
             dangerouslySetInnerHTML={{ __html: data.text }}
           ></div>
-          {data.kids && (
+          {data.comments && (
             <button
               className="indent"
               onClick={() => setShowReply(!isShowReply)}
             >
-              reply ({data.kids.length})
+              reply ({data.comments.length})
               {isShowReply ? <MdArrowDropUp /> : <MdArrowDropDown />}
             </button>
           )}
         </Container>
         {isShowReply &&
-          data.kids.map((id, index) => (
+          data.comments.map((id, index) => (
             <CommentItem key={data.by + id + index} id={id} type="kid" />
           ))}
       </details>

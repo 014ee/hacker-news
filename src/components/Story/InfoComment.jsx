@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { IconReply } from "assets/Icons";
+import { IconComment } from "assets/icons";
 import sitemap from "settings/sitemap";
 
-const InfoReply = ({ id, kids = [] }) => {
+const InfoComment = ({ id, comments = [] }) => {
   return (
     <Link to={`${sitemap.detail.path}${id}`}>
-      <IconReply /> {kids.length}
+      <IconComment /> {comments.length}
     </Link>
   );
 };
 
-export default InfoReply;
+export default InfoComment;

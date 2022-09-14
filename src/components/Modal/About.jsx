@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { IconInfo } from "assets/Icons";
+import { IconInfo } from "assets/icons";
 
 const ModalAbout = () => {
   return (

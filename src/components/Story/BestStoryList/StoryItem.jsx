@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { Container } from "components/Ui";
 import InfoSet from "../InfoSet";
-import { IconPointOn } from "assets/Icons";
+import { IconPointOn } from "assets/icons";
 
 const StoryItem = ({ data, index }) => {
   return (
@@ -20,7 +20,7 @@ const StoryItem = ({ data, index }) => {
           id={data.id}
           by={data.by}
           created={data.created}
-          kids={data.kids}
+          comments={data.comments}
         />
         <div className="pointbar">
           <span>

@@ -7,7 +7,7 @@ import { LatestStoryList } from "components/Story";
 import {
   ActivePageHandlerContext,
   ShowPageContext,
-} from "context/ActivePageContext";
+} from "context/ActivePageContextProvider";
 
 const Show = function () {
   const activePage = useContext(ShowPageContext);

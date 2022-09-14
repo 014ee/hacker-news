@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 
-import { ModalDispatchContext } from "context/ModalContext";
+import { ModalDispatchContext } from "context/ModalContextProvider";
 import { Container } from "components/Ui";
-import { IconClose } from "assets/Icons";
+import { IconClose } from "assets/icons";
 import { HeaderTop } from "./styles";
 
 const HeaderModal = function ({ title }) {

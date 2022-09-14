@@ -1,15 +1,14 @@
-import React, { lazy, Suspense, useEffect, useState } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ThemeProvider } from "styled-components";
 import styled from "styled-components";
 
-import ModalContextProvider from "context/ModalContext";
-import ActivePageContextProvider from "context/ActivePageContext";
+import ModalContextProvider from "context/ModalContextProvider";
+import ActivePageContextProvider from "context/ActivePageContextProvider";
 import ThemeButton from "components/Ui/ThemeButton";
-import { dark, light } from "css/theme";
+import { dark, light } from "./theme";
 
 // 라우트
 import sitemap from "settings/sitemap";
@@ -23,24 +22,13 @@ const Article = lazy(() => import("pages/Article"));
 const Home = lazy(() => import("pages/Home"));
 const Ask = lazy(() => import("pages/Ask"));
 
-// import Show from "pages/Show";
-// import Jobs from "pages/Jobs";
-// import Detail from "components/Header/Detail";
-// import NotFound from "pages/NotFound";
-// import Article from "pages/Article";
-// import Home from "pages/Home";
-// import Ask from "pages/Ask";
-
 function App() {
+  const queryClient = new QueryClient();
   const [theme, setTheme] = useState("dark");
   const themeMode = theme === "dark" ? dark : light;
   const handleSetTheme = (theme) => {
     setTheme(theme);
   };
-  const queryClient = new QueryClient();
-  useEffect(() => {
-    console.log(performance.now);
-  }, []);
 
   return (
     <ErrorBoundary FallbackComponent={NetworkError}>
@@ -80,7 +68,6 @@ function App() {
               </AppBlock>
             </ActivePageContextProvider>
           </ModalContextProvider>
-          <ReactQueryDevtools initialIsOpen={false} />
         </QueryClientProvider>
       </ThemeProvider>
     </ErrorBoundary>

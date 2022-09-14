@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import SearchBar from "components/SearchBar/index.jsx";
-import { IconInfo } from "assets/Icons";
+import { IconInfo } from "assets/icons";
 
 const tags = [
   "web",

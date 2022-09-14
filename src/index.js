@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import App from "./App";
-import "./css/_scaffolding.css";
+import "./css/scaffolding.css";
 
 ReactDOM.render(
   <React.StrictMode>
