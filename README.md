@@ -10,12 +10,13 @@ Y Combinator에서 운영하고 있는 소셜 뉴스 웹사이트 [해커뉴스]
 https://github.com/HackerNews/API
 
 # 기술 스택
-- React
-- React Router Dom
-- Styled Component
-- React JS Pagination
-- React-query
-- React-icons
+- create-react-app
+- react-router-dom
+- styled-components
+- react-query
+- axios
+- react-js-pagination
+- react-icons
 
 # 프로젝트 구조
 📦src  
