@@ -3,11 +3,19 @@ import styled from "styled-components";
 
 const ThemeButton = ({ theme, setTheme }) => {
   return theme === "dark" ? (
-    <ThemeButtonBlock onClick={() => setTheme("light")}>
+    <ThemeButtonBlock
+      onClick={() => setTheme("light")}
+      type="button"
+      aria-label="theme button"
+    >
       <MdOutlineLightMode />
     </ThemeButtonBlock>
   ) : (
-    <ThemeButtonBlock onClick={() => setTheme("dark")}>
+    <ThemeButtonBlock
+      onClick={() => setTheme("dark")}
+      type="button"
+      aria-label="theme button"
+    >
       <MdOutlineNightlight />
     </ThemeButtonBlock>
   );

@@ -9,7 +9,12 @@ const InfoBy = ({ by = "user name" }) => {
 
   return (
     <button
-      onClick={() => openModal("User Information", <ModalUser id={by} />)}
+      onClick={() =>
+        openModal(
+          "User Information",
+          <ModalUser id={by} type="button" arial-label="user button" />
+        )
+      }
     >
       <IconBy /> {by}
     </button>

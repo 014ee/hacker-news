@@ -17,7 +17,11 @@ const HeaderMain = function () {
           <IconLogo />
         </h1>
         <span>
-          <button onClick={() => openModal("My Information", <ModalUser />)}>
+          <button
+            onClick={() => openModal("My Information", <ModalUser />)}
+            type="button"
+            aria-label="mypage button"
+          >
             <IconUser />
           </button>
         </span>

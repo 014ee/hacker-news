@@ -14,10 +14,18 @@ const HeaderSub = function ({ title }) {
       <HeaderTop>
         <h2>{title}</h2>
         <span>
-          <button onClick={() => openModal("Search", <ModalSearch />)}>
+          <button
+            onClick={() => openModal("Search", <ModalSearch />)}
+            type="button"
+            aria-label="search button"
+          >
             <IconSearch />
           </button>
-          <button onClick={() => openModal("About", <ModalAbout />)}>
+          <button
+            onClick={() => openModal("About", <ModalAbout />)}
+            type="button"
+            aria-label="about button"
+          >
             <IconOption />
           </button>
         </span>
