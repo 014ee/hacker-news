@@ -52,7 +52,7 @@ https://github.com/HackerNews/API
 
 ## 구현한 기능
 
-- Top, New, Show, Ask, Jobs 총 5가지 주제 별 페이지 처리
+- Article, Ask, Home(Best), Jobs, Show 총 5가지 주제 별 페이지 처리
 - 각 페이지에 알맞는 데이터로 글 목록 조회
 - 글 제목 클릭시 내용과 댓글을 볼 수 있는 세부 페이지로 이동
 - useParams를 이용한 게시글 페이지네이션 처리
