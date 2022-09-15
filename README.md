@@ -1,6 +1,6 @@
 # Hacker News
 
-Y Combinator에서 운영하고 있는 소셜 뉴스 웹사이트 [해커뉴스](https://news.ycombinator.com/ask)의 글을 읽기전용 모바일 반응형 웹으로 리뉴얼한 사이트입니다.
+Y Combinator에서 운영하고 있는 소셜 뉴스 웹사이트 [해커뉴스](https://news.ycombinator.com/ask)의 글을 읽기전용으로 리뉴얼한 반응형 웹 앱 입니다.
 
 [DEMO](https://hacker-news-014ee.vercel.app/)
 
