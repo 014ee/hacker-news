@@ -14,8 +14,8 @@ function BestStoryList({ queryKey, dateList }) {
   const { isLoading, isError, data } = useQuery(
     [queryKey],
     () =>
-      getStoryIds(queryKey).then(
-        async (ids) => await Promise.all(ids.map((id) => getStory(id)))
+      getStoryIds(queryKey).then((ids) =>
+        Promise.all(ids.slice(0, 50).map((id) => getStory(id)))
       ),
     {
       ...queryOptions,
@@ -23,7 +23,6 @@ function BestStoryList({ queryKey, dateList }) {
         data.filter((story) => formatDate(story.created) === activedDate),
     }
   );
-
   if (isLoading) {
     return <Loading />;
   }
@@ -44,6 +43,7 @@ function BestStoryList({ queryKey, dateList }) {
         dateList={dateList}
         setActivedDate={handleActivedDate}
       />
+
       {data.length > 0 &&
         data
           .slice(1, 5)
